@@ -1,4 +1,2 @@
-incept-cli
+incept-api
 ==========
-
-incept-cli

@@ -1,0 +1,9 @@
+{
+    "name"        : "incept-api"
+  , "version"     : "0.0.1"
+  , "homepage"    : "http://abru.pt"
+  , "description" : "Incept api"
+  , "author": "Pedro Dias <petermdias@gmail.com>"
+  , "dependencies": {}
+  , "main"    : "./main.js"
+}
