@@ -8,12 +8,13 @@ args.shift();
 var command = args.shift();
 
 var stream = net.connect({port: 80, host: 'localhost'}, function() {
-  console.log('Connected to balancer!');
-
   stream.pipe(process.stdout);
 
   switch(command) {
-    case 'create':
+    case 'run':
+      stream.write(JSON.stringify({command: 'run', language: args.shift(), repository: args.shift()}));
+      break;
+    case 'test':
       stream.write(JSON.stringify({command: 'run', language: 'php', repository: 'https://github.com/apocas/helloworld-php'}));
       break;
     case 'start':
@@ -28,6 +29,7 @@ var stream = net.connect({port: 80, host: 'localhost'}, function() {
     case 'logs':
       stream.write(JSON.stringify({command: 'logs', id: args.shift()}));
       break;
+    case 'info':
     case 'status':
       stream.write(JSON.stringify({command: 'status', id: args.shift()}));
       break;
