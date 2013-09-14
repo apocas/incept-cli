@@ -30,8 +30,7 @@ var stream = net.connect({port: 80, host: 'localhost'}, function() {
       stream.write(JSON.stringify({command: 'logs', id: args.shift()}));
       break;
     case 'info':
-    case 'status':
-      stream.write(JSON.stringify({command: 'status', id: args.shift()}));
+      stream.write(JSON.stringify({command: 'info', id: args.shift()}));
       break;
   }
 });
